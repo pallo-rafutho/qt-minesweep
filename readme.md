@@ -1,1 +1,1 @@
-mine sweeper 
+mine sweeper  make 1
