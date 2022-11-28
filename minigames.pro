@@ -12,7 +12,6 @@ SOURCES += \
         game.cpp \
         gui.cpp \
         main.cpp \
-        qrightclickbutton.cpp \
         rightb.cpp
 
 # Default rules for deployment.
@@ -23,7 +22,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     game.h \
     gui.h \
-    qrightclickbutton.h \
     rightb.h
 
 QT += widgets

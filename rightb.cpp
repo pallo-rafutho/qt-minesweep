@@ -15,5 +15,7 @@ void RightB::mousePressEvent(QMouseEvent *e)
 
     if(e->button()==Qt::LeftButton)
         emit lClicked();
+    if(e->type()==QEvent::MouseButtonDblClick)
+        emit dClicked();
 }
 

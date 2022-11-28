@@ -17,7 +17,8 @@ game::game(int m, int l)
 
         int x,y;
         int che=0;
-        while(true)
+        int send=0;
+        while(send==0)
         {
             x = rand() % 9;
             y = rand() % 9;
@@ -33,8 +34,10 @@ game::game(int m, int l)
                 if(che != 1)
                 {
                 data[x][y] = '*';
+                send=1;
+
                 }
-                break;
+
             }
         }
     }

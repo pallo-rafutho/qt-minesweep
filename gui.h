@@ -5,8 +5,8 @@
 #include "game.h"
 
 #include "rightb.h"
-#include "qrightclickbutton.h"
 #include <QList>
+class QLabel;
 
 
 
@@ -19,17 +19,19 @@ public:
 
     void clearz(int x,int y);
     void rightcl();
+    void doublecl();
+    void open();
 
 private:
     RightB *tile[9][9];
     game *mine;
     int started=0;
     QList<RightB *> cleard;
+    QLabel *count;
+    QPushButton *close;
 
-    QRightClickButton *close;
 
-public slots:
-    void open();
+
 };
 
 

@@ -16,10 +16,11 @@ public:
 private slots:
         void mousePressEvent(QMouseEvent *e);
 
+
 signals:
         void rClicked();
         void lClicked();
-
+        void dClicked();
 
 
 };
