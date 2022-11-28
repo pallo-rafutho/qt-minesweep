@@ -11,7 +11,9 @@ CONFIG -= app_bundle
 SOURCES += \
         game.cpp \
         gui.cpp \
-        main.cpp
+        main.cpp \
+        qrightclickbutton.cpp \
+        rightb.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -20,6 +22,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     game.h \
-    gui.h
+    gui.h \
+    qrightclickbutton.h \
+    rightb.h
 
 QT += widgets

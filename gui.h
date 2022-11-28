@@ -3,11 +3,12 @@
 
 #include <QWidget>
 #include "game.h"
-#include "qpushbutton.h"
-#include <QMouseEvent>
 
-//class QPushButton;
-//class RightB;
+#include "rightb.h"
+#include "qrightclickbutton.h"
+#include <QList>
+
+
 
 class Gui : public QWidget
 {
@@ -15,49 +16,23 @@ class Gui : public QWidget
 public:
     explicit Gui(QWidget *parent = nullptr);
     void setui();
-    void open();
+
     void clearz(int x,int y);
     void rightcl();
 
-    void mousePressEvent(QMouseEvent *e);
-
-signals:
-    void rClicked();
-
 private:
-    QPushButton *tile[9][9];
+    RightB *tile[9][9];
     game *mine;
     int started=0;
+    QList<RightB *> cleard;
 
-    QPushButton *close;
+    QRightClickButton *close;
+
+public slots:
+    void open();
 };
 
-/*class RightB : QPushButton
-{
-    Q_OBJECT
 
-    public:
-        explicit RightB(QWidget *parent = 0);
 
-    private slots:
-        void mousePressEvent(QMouseEvent *e);
-
-    signals:
-        void rClicked();
-
-    public slots:
-
-};
-
-RightB::RightB(QWidget *parent) :
-    QPushButton(parent)
-{
-}
-
-void RightB::mousePressEvent(QMouseEvent *e)
-{
-    if(e->button()==Qt::RightButton)
-        emit rClicked();
-}*/
 
 #endif // GUI_H

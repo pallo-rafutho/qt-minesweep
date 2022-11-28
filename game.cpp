@@ -4,24 +4,36 @@
 #include <cstdlib>
 #include <QDebug>
 
-game::game()
+game::game(int m, int l)
 {
     srand(time(NULL));
 
-    int con=0;
+
+
+    data[m][l]='0';
 
     for(int i=0;i<10;i++)
     {
+
         int x,y;
+        int che=0;
         while(true)
         {
             x = rand() % 9;
             y = rand() % 9;
-            if(data[x][y] != '*')
+            if(data[x][y] != '*' &&  data[x][y] != '0'  )
             {
+                for(int k=x-1; k<=x+1; k++)
+                    for(int l=y-1; l<=y+1; l++)
+                    {
+                        if(data[k][l] == '0')
+                            che=1;
+
+                    }
+                if(che != 1)
+                {
                 data[x][y] = '*';
-                con++;
-                qDebug()<<con;
+                }
                 break;
             }
         }
@@ -66,3 +78,5 @@ char game::getdata(int x,int y) const
     return data[x][y];
 
 }
+
+
